@@ -36,6 +36,8 @@ func TestReap_ReapChildren(t *testing.T) {
 		if err := cmd.Start(); err != nil {
 			t.Fatalf("err: %v", err)
 		}
+		
+		time.Sleep(1 * time.Second)
 
 		childPid := cmd.Process.Pid
 		if err := cmd.Process.Kill(); err != nil {
